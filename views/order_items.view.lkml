@@ -63,6 +63,12 @@ view: order_items {
     type: number
     sql: ${TABLE}.sale_price ;;
   }
+  measure: dynamic_sum {
+    type: sum
+    sql: ${TABLE}.{% parameter item_to_add_up %} ;;
+    value_format_name: "usd"
+    label_from_parameter: item_to_add_up
+  }
 
   measure: count {
     type: count

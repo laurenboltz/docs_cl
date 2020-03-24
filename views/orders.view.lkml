@@ -8,6 +8,18 @@ view: orders {
     sql: ${TABLE}.id ;;
   }
 
+  parameter: date_granularity {
+    type: unquoted
+    allowed_value: {
+      label: "Break down by Day"
+      value: "day"
+    }
+    allowed_value: {
+      label: "Break down by Month"
+      value: "month"
+    }
+  }
+
   dimension_group: created {
     type: time
     timeframes: [
@@ -20,6 +32,25 @@ view: orders {
       year
     ]
     sql: ${TABLE}.created_at ;;
+  }
+
+  dimension: date {
+    sql:
+    {% if date_granularity._parameter_value == 'day' %}
+      ${created_date}
+    {% elsif date_granularity._parameter_value == 'month' %}
+      ${created_month}
+    {% else %}
+      ${created_date}
+    {% endif %};;
+    html:
+    {% if date_granularity._parameter_value == 'day' %}
+    <font color="darkgreen">{{ rendered_value }}</font>
+    {% elsif date_granularity._parameter_value == 'month' %}
+    <font color="darkred">{{ rendered_value }}</font>
+    {% else %}
+      ${created_date}
+    {% endif %};;
   }
 
   dimension: status {

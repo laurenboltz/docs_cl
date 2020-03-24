@@ -12,6 +12,8 @@ persist_with: lauren_ecommerce_docs_default_datagroup
 
 explore: connection_reg_r3 {}
 
+explore: sale_price_and_costs {}
+
 explore: events {
   join: users {
     type: left_outer
