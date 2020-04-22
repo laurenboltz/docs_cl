@@ -10,9 +10,7 @@ datagroup: lauren_ecommerce_docs_default_datagroup {
 
 persist_with: lauren_ecommerce_docs_default_datagroup
 
-explore: connection_reg_r3 {}
 
-explore: sale_price_and_costs {}
 
 explore: events {
   join: users {
@@ -21,7 +19,6 @@ explore: events {
     relationship: many_to_one
   }
 }
-
 
 explore: inventory_items {
   join: products {
@@ -67,7 +64,6 @@ explore: orders {
 
 explore: products {}
 
-explore: schema_migrations {}
 
 explore: user_data {
   join: users {

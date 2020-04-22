@@ -20,6 +20,13 @@ view: orders {
     }
   }
 
+  dimension: looker_image {
+    type: string
+    sql: 1=1;;
+    html: <img src="https://looker.com/assets/img/images/logos/looker_black.svg" height="25" width="auto"/> ;;
+  }
+
+
   dimension_group: created {
     type: time
     timeframes: [
@@ -43,14 +50,14 @@ view: orders {
     {% else %}
       ${created_date}
     {% endif %};;
-    html:
-    {% if date_granularity._parameter_value == 'day' %}
-    <font color="darkgreen">{{ rendered_value }}</font>
-    {% elsif date_granularity._parameter_value == 'month' %}
-    <font color="darkred">{{ rendered_value }}</font>
-    {% else %}
-      ${created_date}
-    {% endif %};;
+#     html:
+#     {% if date_granularity._parameter_value == 'day' %}
+#     <font color="darkgreen">{{ rendered_value }}</font>
+#     {% elsif date_granularity._parameter_value == 'month' %}
+#     <font color="darkred">{{ rendered_value }}</font>
+#     {% else %}
+#       ${created_date}
+#     {% endif %};;
   }
 
   dimension: status {
