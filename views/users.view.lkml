@@ -16,7 +16,21 @@ view: users {
   dimension: city {
     type: string
     sql: ${TABLE}.city ;;
+    link: {
+      label: "City Metrics Explore"
+      url: "https://master.dev.looker.com/explore/lauren_ecommerce_docs/order_items?fields=users.city,orders.count,users.count&f[users.city]={{ value }}&sorts=orders.count+desc&limit=500"
+    }
   }
+
+  dimension: lifetime_orders {
+    type: number
+    sql: ${TABLE}.lifetime_orders ;;
+   }
+
+  dimension: repeat_customer {
+    type: yesno
+    sql: ${lifetime_orders} > 1;;
+}
 
   dimension: country {
     type: string

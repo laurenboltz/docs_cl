@@ -6,6 +6,10 @@ view: orders {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+    link: {
+      label: "Contact Warehouse Support"
+      url: "mailto:warehouse@brettcase.com"
+    }
   }
 
   parameter: date_granularity {
@@ -63,6 +67,10 @@ view: orders {
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
+    link: {
+      label: "Contact Warehouse Support"
+      url: "mailto:warehouse@brettcase.com"
+      }
   }
 
   dimension: user_id {

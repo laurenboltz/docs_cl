@@ -8,10 +8,10 @@ view: products {
     sql: ${TABLE}.id ;;
   }
 
-  dimension: brand {
+ dimension: brand {
     type: string
     sql: ${TABLE}.brand ;;
-  }
+}
 
   dimension: category {
     type: string
