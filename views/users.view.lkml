@@ -22,7 +22,7 @@ view: users {
     }
     link: {
       label: "City Dashboard"
-      url: "https://master.dev.looker.com/dashboards-next/4145?City={{ _filters['users.state'] | url_encode }}"
+      url: "https://master.dev.looker.com/dashboards-next/4145?City={{ _filters['users.city'] | url_encode }}"
     }
   }
 
