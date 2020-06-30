@@ -20,6 +20,10 @@ view: users {
       label: "City Metrics Explore"
       url: "https://master.dev.looker.com/explore/lauren_ecommerce_docs/order_items?fields=users.city,orders.count,users.count&f[users.city]={{ value }}&sorts=orders.count+desc&limit=500"
     }
+    link: {
+      label: "City Dashboard"
+      url: "https://master.dev.looker.com/dashboards-next/4145?City={{ _filters['users.state'] | url_encode }}"
+    }
   }
 
   dimension: age_tier {
