@@ -8,7 +8,7 @@ datagroup: lauren_ecommerce_docs_default_datagroup {
   max_cache_age: "1 hour"
 }
 
-persist_with: lauren_ecommerce_docs_default_datagroup
+# persist_with: lauren_ecommerce_docs_default_datagroup
 
 
 
