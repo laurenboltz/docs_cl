@@ -8,10 +8,10 @@ view: user_data {
     sql: ${TABLE}.id ;;
   }
 
-  dimension: max_num_orders {
-    type: number
-    sql: ${TABLE}.max_num_orders ;;
-  }
+#   dimension: max_num_orders {
+#     type: number
+#     sql: ${TABLE}.max_num_orders ;;
+#   }
 
   dimension: total_num_orders {
     type: number
