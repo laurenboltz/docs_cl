@@ -14,6 +14,15 @@ view: order_items {
     sql: ${TABLE}.inventory_item_id ;;
   }
 
+  filter: my_filter {
+    default_value: "my^_value"
+  }
+
+  parameter: date_selector {
+    type: date_time
+    description: "Use this field to select a date to filter results by."
+  }
+
   parameter: item_to_add_up {
     type: unquoted
     allowed_value: {
