@@ -29,6 +29,18 @@ explore: inventory_items {
 }
 
 explore: order_items {
+  query: order_count_by_month {
+    description: "Number of orders placed by month in 2019"
+    dimensions: [orders.created_month]
+    measures: [orders.count]
+    filters: [orders.created_date: "2019"]
+  }
+  query: order_count_by_state_by_month {
+    description: "Monthly order count and user count by state"
+    dimensions: [orders.created_month, users.state]
+    measures: [orders.count, users.count]
+    filters: [orders.created_date: "2019"]
+  }
   join: inventory_items {
     type: left_outer
     sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
