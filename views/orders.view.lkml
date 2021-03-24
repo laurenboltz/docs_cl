@@ -6,6 +6,10 @@ view: orders {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+    link: {
+      label: "Contact Warehouse Support"
+      url: "mailto:warehouse@brettcase.com"
+    }
   }
 
   parameter: date_granularity {
@@ -19,6 +23,13 @@ view: orders {
       value: "month"
     }
   }
+
+  dimension: looker_image {
+    type: string
+    sql: 1=1;;
+    html: <img src="https://looker.com/assets/img/images/logos/looker_black.svg" height="25" width="auto"/> ;;
+  }
+
 
   dimension_group: created {
     type: time
@@ -43,19 +54,23 @@ view: orders {
     {% else %}
       ${created_date}
     {% endif %};;
-    html:
-    {% if date_granularity._parameter_value == 'day' %}
-    <font color="darkgreen">{{ rendered_value }}</font>
-    {% elsif date_granularity._parameter_value == 'month' %}
-    <font color="darkred">{{ rendered_value }}</font>
-    {% else %}
-      ${created_date}
-    {% endif %};;
+#     html:
+#     {% if date_granularity._parameter_value == 'day' %}
+#     <font color="darkgreen">{{ rendered_value }}</font>
+#     {% elsif date_granularity._parameter_value == 'month' %}
+#     <font color="darkred">{{ rendered_value }}</font>
+#     {% else %}
+#       ${created_date}
+#     {% endif %};;
   }
 
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
+    link: {
+      label: "Contact Warehouse Support"
+      url: "mailto:warehouse@brettcase.com"
+      }
   }
 
   dimension: user_id {

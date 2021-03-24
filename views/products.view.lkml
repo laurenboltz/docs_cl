@@ -8,10 +8,15 @@ view: products {
     sql: ${TABLE}.id ;;
   }
 
-  dimension: brand {
+ dimension: brand {
     type: string
     sql: ${TABLE}.brand ;;
+    link: {
+      label: "Google"
+      url: "http://www.google.com/search?q={{ value }}"
+      icon_url: "http://google.com/favicon.ico"
   }
+}
 
   dimension: category {
     type: string

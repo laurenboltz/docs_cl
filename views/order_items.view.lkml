@@ -14,6 +14,15 @@ view: order_items {
     sql: ${TABLE}.inventory_item_id ;;
   }
 
+  filter: my_filter {
+    default_value: "my^_value"
+  }
+
+  parameter: date_selector {
+    type: date_time
+    description: "Use this field to select a date to filter results by."
+  }
+
   parameter: item_to_add_up {
     type: unquoted
     allowed_value: {
@@ -27,6 +36,22 @@ view: order_items {
     allowed_value: {
       label: "Total Profit"
       value: "profit"
+    }
+  }
+
+  parameter: number_of_results {
+    type: string
+    allowed_value: {
+      label: "Less than 500"
+      value: "< 500"
+    }
+    allowed_value: {
+      label: "Less than 10,000"
+      value: "< 10000"
+    }
+    allowed_value: {
+      label: "All Results"
+      value: "> 0"
     }
   }
 
