@@ -4,6 +4,7 @@ connection: "thelook"
 include: "/views/**/*.view"
 
 datagroup: lauren_ecommerce_docs_default_datagroup {
+  label: "eCommerce hourly"
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 }
